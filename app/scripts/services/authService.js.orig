@@ -1,0 +1,20 @@
+angular.module('AngularScaffold.Services').factory('AuthService', ['$http',
+	function($http){
+		$http.defaults.withCredentials = true;
+<<<<<<< HEAD
+		var baseUrl = 'http://nannyontherun.herokuapp.com/';
+=======
+		var baseUrl = 'http://localhost:8000/';
+>>>>>>> 06723dd666b4b65528bfa26afc3595da5b675acb
+		return {
+				Logout: function(){
+					return $http.get(baseUrl + "v1/logout");
+				},
+				Login: function(payload){
+					return $http.post(baseUrl + "v1/login", payload);
+				},
+        Register: function(payload){
+          return $http.post(baseUrl + "v1/register", payload);
+        }
+	    };
+}]);
